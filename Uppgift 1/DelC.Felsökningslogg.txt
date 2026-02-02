@@ -1,0 +1,115 @@
+Del C – Felsökningslogg
+1. Vad fungerade inte som tänkt i programmet från början?
+
+Jag försökte använda TryParse på inmatningen för namn (en string), vilket inte fungerar eftersom TryParse är till för tal (t.ex. int och `double).
+
+Jag fick även några små fel som:
+
+glömt semikolon (;)
+
+extra parenteser eller felplacerade klamrar (( ) { })
+
+2. Vad trodde jag skulle hända?
+
+Jag trodde att TryParse kunde användas på alla typer av inmatningar för att stoppa krascher, även på text (namn).
+
+Jag trodde också att små skrivfel (t.ex. ett semikolon) inte skulle påverka så mycket.
+
+3. Vad hände i verkligheten när jag körde programmet?
+
+Programmet gav fel (compile errors) när jag använde TryParse på en string för namn.
+
+Programmet kunde inte köras alls innan jag fixade semikolon och parenteser, eftersom C# kräver korrekt syntax.
+
+4. Vad ändrade jag i koden för att lösa problemet?
+
+Jag tog bort TryParse från första inmatningen (namn) och lät den vara:
+
+string namn = Console.ReadLine();
+
+Jag behöll TryParse för siffror (månadsbelopp, månader, ränta) eftersom det är där programmet annars kan krascha vid fel inmatning.
+
+Jag rättade syntaxfel:
+
+lade till saknade ;
+
+tog bort extra parentes/klammer och såg till att allt stängdes korrekt
+
+5. Vad blev bättre efter ändringen?
+
+Koden fick inga errors och kunde köras.
+
+Programmet kraschade inte när jag skrev in fel värden (t.ex. text där ett tal förväntas).
+
+Namn kan fortfarande innehålla siffror om användaren skriver det – men det påverkar bara utskriften, inte programmets funktion.
+
+2. Testning – tre testfall
+Testfall 1 – Normalt värde
+
+Inmatning:
+
+Namn: Anna
+
+Månadsbelopp: 1500
+
+Antal månader: 18
+
+Ränta: 3
+
+Förväntat resultat:
+
+Programmet ska skriva ut totalt insatt belopp och totalt inklusive ränta.
+
+Resultat i verkligheten:
+
+Programmet skrev ut resultaten korrekt och utan fel.
+
+Testfall 2 – Felaktigt värde (text istället för tal)
+
+Inmatning:
+
+Namn: Anna
+
+Månadsbelopp: hej
+
+Antal månader: 18
+
+Ränta: 3
+
+Förväntat resultat:
+
+Programmet ska inte krascha, utan visa ett felmeddelande.
+
+Resultat i verkligheten:
+
+Programmet visade felmeddelande och avslutade utan att krascha.
+
+Ändring/förbättring:
+
+Jag använde TryParse för talinmatningar så att programmet hanterar fel inmatning säkert.
+
+Testfall 3 – Felaktigt värde (namn med siffror)
+
+Inmatning:
+
+Namn: Anna123
+
+Månadsbelopp: 1500
+
+Antal månader: 18
+
+Ränta: 3
+
+Förväntat resultat:
+
+Programmet ska fortfarande fungera, men namnet skrivs ut som det matas in.
+
+Resultat i verkligheten:
+
+Programmet fungerade och utskriften blev t.ex. “Anna123 …”.
+
+Det enda som påverkas är att siffrorna syns i namnet, programmet räknar fortfarande rätt.
+
+Kort slutsats
+
+Jag felsökte genom att köra programmet flera gånger och medvetet skriva fel inmatning. Efter att jag tog bort TryParse på namn och fixade syntaxfel (semikolon/paranteser) fungerade programmet utan errors och kraschade inte vid felaktig inmatning.
