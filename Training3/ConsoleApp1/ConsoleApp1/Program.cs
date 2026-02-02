@@ -15,5 +15,5 @@ if (int.TryParse(text, out int ålder))
 }
 else
 {
-	Console.WriteLine("Otillåten inmatning, använd siffror");
+	Console.WriteLine("Otillåten inmatning, ");
 }
