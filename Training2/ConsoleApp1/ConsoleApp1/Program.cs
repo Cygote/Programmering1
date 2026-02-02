@@ -9,7 +9,7 @@ if(!IsNumber)
 
 if (tal > 0)
 {
-
+	Console.WriteLine("Talet är positivt.");
 }
 else if(tal < 0)
 {
