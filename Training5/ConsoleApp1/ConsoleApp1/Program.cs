@@ -1,10 +1,10 @@
-﻿double CalculateSalary(double hoursWorked,
-double hourlyRate)
+﻿double CalculateSalary(double hoursWorked, double hourlyRate, double overtimeFactor = 1.5)
 {
 	double regularHours = Math.Min(hoursWorked, 40);
 	double overtimeHours = Math.Max(0, hoursWorked - 40);
 	double regularPay = regularHours * hourlyRate;
-	double overtimePay = overtimeHours * hourlyRate * 1.5;
+	double overtimePay = overtimeHours * hourlyRate * overtimeFactor;
+
 	return regularPay + overtimePay;
 }
 
