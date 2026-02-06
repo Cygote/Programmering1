@@ -73,8 +73,8 @@ class Program
 		}
 
 		Console.WriteLine();
-		Console.WriteLine("Statistics:");
-		Console.WriteLine($"Nuber of valid attempts: {guesses.Count}");
+		Console.WriteLine("STATISTICS:");
+		Console.WriteLine($"Nubmer of valid attempts: {guesses.Count}");
 		Console.WriteLine("Your guesses in order:");
 
 		for (int i = 0; i < guesses.Count; i++)
@@ -108,8 +108,8 @@ class Program
 			}
 
 			Console.WriteLine();
-			Console.WriteLine($"Your best guess was: {bestGuess} (diff {bestDiff})");
-			Console.WriteLine($"Your worst guess was: {worstGuess} (diff {worstDiff})");
+			Console.WriteLine($"Your best guess was: {bestGuess} (difference {bestDiff})");
+			Console.WriteLine($"Your worst guess was: {worstGuess} (difference {worstDiff})");
 		}
 	}
 }
