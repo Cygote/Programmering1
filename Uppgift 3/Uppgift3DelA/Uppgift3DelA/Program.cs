@@ -7,6 +7,11 @@ class Program
 	static List<RegisterPost> Poster = new List<RegisterPost>();
 	static void Main()
 	{
+		// Jag skulle nog haft en annan klass typ RegisterManager som hanterar alla metoder som har med registret att göra.
+		// Och här i Main skulle jag bara skapat en instans av den klassen och anropat en metod som startar programmet typ Run().
+		// RegisterManager manager = new RegisterManager();
+		// manager.Run();
+
 		while (true)
 		{
 			Meny();
@@ -154,6 +159,7 @@ class Program
 		}
 
 		// VISA LISTA OCH VÄLJ ETT NUMMER
+		// Denna kod finns på 3 ställen så skulle lagt det i en egen metod typ PrintRegisterHeader()
 		Console.WriteLine($"{"Nr",-3} {"Namn",-20} {"Telefon",-15}");
 		Console.WriteLine(new string('*', 38));
 
@@ -176,6 +182,8 @@ class Program
 	}
 
 	//INGEN BLANK INMATNING ÄR GODKÄND
+	// Skulle föreslå ett annat namn på metoden.
+	// Tex: GetNonEmptyStringFromConsoleInput
 	static string BlankInmatningInteOk(string prompt)
 	{
 		while (true)
@@ -190,6 +198,8 @@ class Program
 		}
 	}
 
+	// Skulle föreslå ett annat namn på metoden.
+	// Tex: GetIntInRangeFromConsoleInput
 	static int ValAvAnvandare(string prompt, int min, int max)
 	{
 		while (true)
@@ -211,6 +221,7 @@ class Program
 	}
 }
 
+// Skulle lagt denna klass i en separat fil, RegisterPost.cs
 class RegisterPost
 {
 	public string Namn;
